@@ -29,6 +29,14 @@ public class impl16234 {
 		R = Integer.parseInt(st1.nextToken());
 		
 		map = new int[N][N];
+		
+		for (int i = 0; i < N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+            for (int j = 0; j < N; j++) {
+                map[i][j] = Integer.parseInt(st.nextToken()); // ← 이게 빠졌음
+            }
+        }
+		
 		while(work) { //일단 연합이 생기면 계속 진행
 			visit = new boolean[N][N];
 			work = false;
