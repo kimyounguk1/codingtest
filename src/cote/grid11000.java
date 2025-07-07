@@ -30,6 +30,7 @@ public class grid11000 {
 		
 		for (Clss lec : list) {
 		    if (!pq.isEmpty() && pq.peek().end <= lec.start) {
+		    	//종료시간이 가장 작은 것중 시작 시간보다 적거나 같은 거를 선택
 		        pq.poll(); // 강의실 재사용
 		    }
 		    pq.offer(lec); // 항상 새 강의는 하나의 강의실에 들어감

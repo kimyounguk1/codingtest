@@ -13,7 +13,8 @@ public class grid1931 {
 		Scanner sc = new Scanner(System.in);
 		
 		N = sc.nextInt();
-		list = new LinkedList<>();
+		list = new ArrayList<>();
+		//LinkedList는 삽입/삭제 빠름, ArrayList는 읽기가 빠름
 		for(int i=0; i<N; i++) { //N개의 회의
 			S = sc.nextInt();
 			E = sc.nextInt();
@@ -30,10 +31,9 @@ public class grid1931 {
 		int count = 0;
 		int endTime = 0;
 		for(int i=0; i<list.size(); i++) {
-			if(endTime<=list.get(i)[0]) {
+			if(endTime<=list.get(i)[0]) { //전 회의의 종료 시간이 새로운 회의의 시작 시간보다 작거나 같아야 함 
 				endTime = list.get(i)[1];
 				count++;
-				System.out.println(endTime);
 			}
 		}
 		System.out.println(count);

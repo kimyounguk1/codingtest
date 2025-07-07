@@ -38,7 +38,7 @@ public class grid1700 {
 			
 			for(int j=i+1; j<K; j++) {//current다음부터 찾기 시작
 				if(order[j]==plugged) {//plugged가 order에 처음 나오는 시점
-					nextUse = j; //plugged가 다음에 쓰일 시점
+					nextUse = j; //plugged가 다음에 쓰일 시점 인덱스 의미
 					break;
 				}//나오지 않으면 MAX_VALUE
 			}

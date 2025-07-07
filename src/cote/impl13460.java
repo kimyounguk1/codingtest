@@ -69,9 +69,11 @@ public class impl13460 {
 				RY = red[1];
 				RC = red[2];
 				if(map[RX][RY]=='O') {
-					System.out.println(st.depth);
+					//움직이는게 depth+1보다 먼저이므로 출력은 1을 추가해서 해야 함
+					System.out.println(st.depth+1);
 					return;
 				}
+				//겹칠때 이동 횟수가 더 큰 것 한칸 뒤로
 				if(RX==BX&&RY==BY) {
 					if(BC<RC) {
 						RX = RX -d[0];
@@ -81,13 +83,14 @@ public class impl13460 {
 						BY = BY -d[1];
 					}
 				}
-				//겹칠때 이동 횟수가 더 큰 것 한칸 뒤로
+				
 				if(!visit[RX][RY][BX][BY]) {
 					visit[RX][RY][BX][BY] = true;
 					queue.offer(new State(BX, BY, RX, RY, st.depth+1));
 				}
 			}
 		}
+		System.out.println("-1");
 	}
 	
 	static int[] move(int X, int Y, int[] d) {

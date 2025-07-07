@@ -47,6 +47,8 @@ public class impl15685 {
     	}//리스트에 세대수만큼 방향을 넣음, 다음에 점에 방문 처리해야함
     	
     }
+
+
     
     static void check(int x, int y) {
     	map[y][x] = true;

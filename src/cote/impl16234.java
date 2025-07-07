@@ -33,7 +33,7 @@ public class impl16234 {
 		for (int i = 0; i < N; i++) {
             StringTokenizer st = new StringTokenizer(br.readLine());
             for (int j = 0; j < N; j++) {
-                map[i][j] = Integer.parseInt(st.nextToken()); // ← 이게 빠졌음
+                map[i][j] = Integer.parseInt(st.nextToken());
             }
         }
 		
