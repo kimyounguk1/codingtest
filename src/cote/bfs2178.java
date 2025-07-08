@@ -1,4 +1,4 @@
-package cote.exam1;
+package cote;
 
 import java.io.*;
 import java.util.*;
