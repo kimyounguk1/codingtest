@@ -31,9 +31,6 @@ public class dfs154935v2 {
 
         }
 
-        // sum > N이면 더 이상 의미 없음 (음수가 없을 때만 유효)
-        if (sum > N) return;
-
         for (int i = start; i < arr.length; i++) {
             dfs(sum + arr[i], i + 1, depth+1); // 다음 인덱스부터 탐색
         }
