@@ -34,8 +34,17 @@ public class dp2293 {
 		if(sum>k) return 0;
 		if(sum == k) return 1;
 		if(state[idx][sum]!=null) return state[idx][sum];
-		state[idx][sum] = dp(idx+1, sum) + dp(idx, sum+coin[idx]);
-		return state[idx][sum];
+		//경우의 수를 나눠서 그냥 더하기 아니면 숫자 바꾸기
+//		state[idx][sum] = dp(idx+1, sum) + dp(idx, sum+coin[idx]);
+//		return state[idx][sum];
+		//모든 경우의 수 구하기
+		int res = 0;
+		for(int i=idx; i<n; i++) {
+			res = res + dp(i, sum+coin[i]);
+		}
+		state[idx][sum] = res;
+		return res;
+		
 		
 	}
 }
