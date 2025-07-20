@@ -55,8 +55,8 @@ public class dp2294 {
 		if(idx == n) return inf;
 		if(sum == k) return 0;
 		if(state2[sum][idx]!=null) return state2[sum][idx];
+		
 		int res = dp(idx + 1, sum); // 동전 안 쓰는 경우
-
 		int temp = dp(idx, sum + coin[idx]);
 		if (temp != inf) {
 			res = Math.min(res, temp + 1); // 동전 쓰는 경우

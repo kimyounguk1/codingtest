@@ -6,7 +6,7 @@ import java.util.*;
 public class dp2294v2 {
 
 	static int k,n;
-	static Integer[][] state;
+	static int[][] state;
 	static int[] coin;
 	static int inf = Integer.MAX_VALUE;
 
@@ -19,7 +19,7 @@ public class dp2294v2 {
 		n = Integer.parseInt(st.nextToken()); //동전 수
 		k = Integer.parseInt(st.nextToken()); //합
 		
-		state = new Integer[n][k];
+		state = new int[n][k];
 		coin = new int[n];
 		
 		for(int i=0; i<n; i++) {
@@ -27,7 +27,7 @@ public class dp2294v2 {
 		}
 		
 		int result = dp(0,0);
-		bw.write(String.valueOf(result >= 100001 ? -1 : result));
+		bw.write(String.valueOf(result >= 100001 || result == 0 ? -1 : result));
 		bw.flush();
 		bw.close();
 	}
@@ -35,7 +35,7 @@ public class dp2294v2 {
 	static int dp(int idx, int sum) {
 		if(sum > k) return 100001;
 		if(sum == k) return 0;
-		if(state[idx][sum] != null) return state[idx][sum];
+		if(state[idx][sum] != 0) return state[idx][sum];
 		
 		state[idx][sum] = 100001;
 		for(int i=idx; i<n; i++) {
