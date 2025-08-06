@@ -2,7 +2,7 @@ package cote;
 
 import java.io.*;
 import java.util.*;
-
+//연속해야 한다는 조건을 제거한 dp변형 문제 풀이
 public class dp2003 {
 	
 	static int[] array;
