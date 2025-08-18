@@ -27,7 +27,7 @@ public class tp1806 {
 		
 		while(end <= n) {
 			if(sum>=s) {
-				len = Math.min(len, end-start+1);
+				len = Math.min(len, end-start);
 				sum = sum - arr[start++];
 			}else if(sum<s) {
 				sum = sum + arr[end++];

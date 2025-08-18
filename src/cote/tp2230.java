@@ -12,7 +12,7 @@ public class tp2230 {
 		int n = Integer.parseInt(st.nextToken());
 		int k = Integer.parseInt(st.nextToken());
 		
-		int[] arr = new int[n+1];
+		int[] arr = new int[n];
 		
 		for(int i=0; i<n; i++) {
 			arr[i] = Integer.parseInt(br.readLine());
@@ -20,17 +20,17 @@ public class tp2230 {
 		
 		Arrays.sort(arr);
 		
-		int start = 0, end = n-1;
+		int start = 0, end = 0;
 		int answer = Integer.MAX_VALUE;
 
-		while(start < end) {
+		while(end < n && start<=end) {
 		    int diff = arr[end] - arr[start];
 		    
 		    if(diff >= k) {
 		        answer = Math.min(answer, diff);
-		        end--; // 차이를 줄여보자
+		        start++;
 		    } else {
-		        start++; // 차이를 늘려야 함
+		        end++; // 차이를 늘려야 함
 		    }
 		}
 		System.out.println(answer);
