@@ -54,16 +54,16 @@ public class tp7453 {
 				long valA = AB[start];
 				long valC = CD[end];
 				//연속으로 동일한 갑이 나오는 경우를 구해서 곱으로 전체 경우의 수를 구함
-				int countA = 0;
+				long countA = 0;
 				while(start<AB.length&&AB[start] == valA) {
 					start++;
 					countA++;
 				}
 					
-				int countC = 0;
+				long countC = 0;
 				while(end>=0&&CD[end]==valC) {
-					end++;
-					countC++;
+					end--;
+					countC++;t
 				}
 				count += countA*countC;
 			}else if(diff > 0) {

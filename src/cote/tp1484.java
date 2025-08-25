@@ -9,8 +9,8 @@ public class tp1484 {
 		
 		int G = Integer.parseInt(br.readLine());
 		
-		int e = 1;
-		int b = 0;
+		int e = 2;
+		int b = 1;
 		
 		boolean flag = false;
 		
