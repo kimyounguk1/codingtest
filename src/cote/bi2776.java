@@ -6,6 +6,7 @@ public class bi2776 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 		int t = Integer.parseInt(br.readLine());
 		for(int i=0; i<t; i++) {
 			int n = Integer.parseInt(br.readLine());
@@ -27,10 +28,11 @@ public class bi2776 {
 				arr2[j] = Integer.parseInt(st2.nextToken());
 			}
 			
-			int start = 0;
-			int end = n-1;
-			boolean flag = false;
+			
 			for(int k=0; k<m; k++) {
+				int start = 0;
+				int end = n-1;
+				boolean flag = false;
 				while(start<=end) {
 					int mid = (start+end)/2;
 					
@@ -39,19 +41,24 @@ public class bi2776 {
 						break;
 					}
 					
-					if(arr1[mid]>arr2[k]) {
-						end = mid-1;
-					}else {
+					if(arr1[mid]<arr2[k]) {
 						start = mid+1;
+						
+					}else {
+						end = mid-1;
 					}
 				}
 				if(flag) {
-					System.out.println(1);
+					bw.write("1");
+					bw.newLine();
 				}else {
-					System.out.println(0);	
+					bw.write("0");
+					bw.newLine();
 				}
 			}
 		}
+		bw.flush();
+		bw.close();
 	}
 
 }

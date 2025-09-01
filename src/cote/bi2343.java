@@ -14,15 +14,17 @@ public class bi2343 {
 		int m = Integer.parseInt(st1.nextToken());
 		
 		int[] arr = new int[n];
+		int max = Integer.MIN_VALUE;
 		
 		StringTokenizer st2 = new StringTokenizer(br.readLine());
 		int sum = 0;
 		for(int i=0; i<n; i++) {
 			arr[i] = Integer.parseInt(st2.nextToken());
 			sum += arr[i];
+			max = Math.max(max, arr[i]);
 		}
 		
-		int start = 0;
+		int start = max;
 		int end = sum;
 		int answer = 0;
 		while(start<=end) {

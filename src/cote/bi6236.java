@@ -44,6 +44,8 @@ public class bi6236 {
 			if(money-r<0) {
 				count++;
 				money = mid -r;
+			}else {
+				money -= r;
 			}
 		}
 		return count;
